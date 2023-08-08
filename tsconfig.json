@@ -2,7 +2,9 @@
     "compilerOptions": {
         "target": "es2017",
         "module": "commonjs",
-        "sourceMap": true
+        "sourceMap": true,
+        "baseUrl": "./",
+        "outDir": "./leet_code/javascript",
     },
     "exclude": [
         "node_modules"
