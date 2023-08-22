@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.0180" tests="13" failures="12">
+  <testsuite name="Root Suite" timestamp="2023-08-21T10:25:39" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Create Message Queue" timestamp="2023-08-21T10:25:39" tests="0" file="/projects/challenge/test/index.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Tests for create topic" timestamp="2023-08-21T10:25:39" tests="5" file="/projects/challenge/test/index.spec.js" time="0.0070" failures="4">
+    <testcase name="Create Message Queue Tests for create topic #1 - should create topics on every cpu core available" time="0.0000" classname="#1 - should create topics on every cpu core available">
+    </testcase>
+    <testcase name="Create Message Queue Tests for create topic #2 - should send error message if topic name is empty" time="0.0010" classname="#2 - should send error message if topic name is empty">
+      <failure message="expected +0 to equal 1" type="AssertionError"><![CDATA[AssertionError: expected +0 to equal 1
+    at Context.<anonymous> (test/index.spec.js:45:38)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for create topic #3 - should send error message if topic already exists" time="0.0000" classname="#3 - should send error message if topic already exists">
+      <failure message="Topic name already exists" type="Error"><![CDATA[Error: Topic name already exists
+    at MessageQueue.createTopic (index.js:14:13)
+    at Context.<anonymous> (test/index.spec.js:49:20)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for create topic #4 - should send error message if no cpu core available" time="0.0010" classname="#4 - should send error message if no cpu core available">
+      <failure message="expected +0 to equal 3" type="AssertionError"><![CDATA[AssertionError: expected +0 to equal 3
+    at Context.<anonymous> (test/index.spec.js:57:38)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for create topic #5 - should send error message if topic name is not of string type" time="0.0000" classname="#5 - should send error message if topic name is not of string type">
+      <failure message="Topic name should be a string" type="Error"><![CDATA[Error: Topic name should be a string
+    at MessageQueue.createTopic (index.js:9:47)
+    at Context.<anonymous> (test/index.spec.js:61:20)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Tests for send message" timestamp="2023-08-21T10:25:39" tests="3" file="/projects/challenge/test/index.spec.js" time="1.0050" failures="3">
+    <testcase name="Create Message Queue Tests for send message #1 - should send message to all available topics" time="1.0030" classname="#1 - should send message to all available topics">
+      <failure message="expected 9 to equal 7" type="AssertionError"><![CDATA[AssertionError: expected 9 to equal 7
+    at Context.<anonymous> (test/index.spec.js:82:33)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for send message #2 - should send error message if topic name is invalid" time="0.0010" classname="#2 - should send error message if topic name is invalid">
+      <failure message="expected +0 to equal 5" type="AssertionError"><![CDATA[AssertionError: expected +0 to equal 5
+    at Context.<anonymous> (test/index.spec.js:92:38)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for send message #3 - should send error message if queue message is empty" time="0.0000" classname="#3 - should send error message if queue message is empty">
+      <failure message="expected +0 to equal 6" type="AssertionError"><![CDATA[AssertionError: expected +0 to equal 6
+    at Context.<anonymous> (test/index.spec.js:98:38)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Tests for queue size" timestamp="2023-08-21T10:25:40" tests="2" file="/projects/challenge/test/index.spec.js" time="0.0010" failures="2">
+    <testcase name="Create Message Queue Tests for queue size #1 - should get queue size of all topics" time="0.0000" classname="#1 - should get queue size of all topics">
+      <failure message="topicName is not defined" type="ReferenceError"><![CDATA[ReferenceError: topicName is not defined
+    at MessageQueue.getSize (index.js:39:30)
+    at Context.<anonymous> (test/index.spec.js:106:40)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for queue size #2 - should send error if topic name is invalid" time="0.0010" classname="#2 - should send error if topic name is invalid">
+      <failure message="topicName is not defined" type="ReferenceError"><![CDATA[ReferenceError: topicName is not defined
+    at MessageQueue.getSize (index.js:39:30)
+    at Context.<anonymous> (test/index.spec.js:111:20)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Tests for get message" timestamp="2023-08-21T10:25:40" tests="3" file="/projects/challenge/test/index.spec.js" time="0.0030" failures="3">
+    <testcase name="Create Message Queue Tests for get message #1 - should get queue message from all topics" time="0.0010" classname="#1 - should get queue message from all topics">
+      <failure message="Cannot read property &apos;purpose&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'purpose' of undefined
+    at MessageQueue.getMessage (index.js:31:29)
+    at Context.<anonymous> (test/index.spec.js:121:22)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for get message #2 - should send error if topic name is invalid" time="0.0000" classname="#2 - should send error if topic name is invalid">
+      <failure message="Cannot read property &apos;bicycle&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'bicycle' of undefined
+    at MessageQueue.getMessage (index.js:31:29)
+    at Context.<anonymous> (test/index.spec.js:132:20)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+    <testcase name="Create Message Queue Tests for get message #3 - should send error if queue is empty" time="0.0000" classname="#3 - should send error if queue is empty">
+      <failure message="Cannot read property &apos;purpose&apos; of undefined" type="TypeError"><![CDATA[TypeError: Cannot read property 'purpose' of undefined
+    at MessageQueue.getMessage (index.js:31:29)
+    at Context.<anonymous> (test/index.spec.js:138:20)
+    at processImmediate (internal/timers.js:464:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
