@@ -10,10 +10,10 @@
  * }
  */
 
-// type Node = {
-//     val: number;
-//     neighbors: Node[] | []
-// }
+type Node = {
+    val: number;
+    neighbors: Node[] | []
+}
 
 function cloneGraph(node: Node | null): Node | null {
     if (!node) return null;
