@@ -7,7 +7,8 @@ class Solution(object):
         """
 
         dictionary = dict()
-        for i, val in enumerate(nums): dictionary[val] = i
+        for i, val in enumerate(nums): 
+            dictionary[val] = i
 
         for i, val in enumerate(nums):
             second_el = target - val

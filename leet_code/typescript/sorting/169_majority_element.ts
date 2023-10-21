@@ -8,13 +8,6 @@
 // Input: nums = [3,2,3]
 // Output: 3
 
-function majorityElementSortirng(nums: number[]): number {
-    const sorted = nums.sort((a, b) => a - b)
-
-    return sorted[Math.floor(nums.length / 2)]
-};
-
-
 function majorityElement(nums: number[]): number {
     if (nums.length === 1) return nums[0]
 
@@ -29,4 +22,10 @@ function majorityElement(nums: number[]): number {
         }
         els[nums[i]] = 1
     }
+};
+
+function majorityElementSortirng(nums: number[]): number {
+    const sorted = nums.sort((a, b) => a - b)
+
+    return sorted[Math.floor(nums.length / 2)]
 };

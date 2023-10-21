@@ -1,9 +1,9 @@
-# Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. 
+# Given an array of integers nums which is sorted in ascending order, and an integer 
+# target, write a function to search target in nums. 
 # If target exists, then return its index. Otherwise, return -1.
 
 # You must write an algorithm with O(log n) runtime complexity.
 
-import math
 
 class Solution(object):
     def search(self, nums, target):
@@ -18,7 +18,8 @@ class Solution(object):
 
         while start <= end:
             middle = (end + start) // 2
-            if nums[middle] == target: return middle
+            if nums[middle] == target: 
+                return middle
             if nums[middle] > target:
                 end = middle - 1
             else:
@@ -34,11 +35,13 @@ class SolutionRecoursive(object):
         :rtype: int
         """
         def binary_search(left, right):
-            if left > right: return -1
+            if left > right: 
+                return -1
 
             middle = (left + right) // 2
 
-            if nums[middle] == target: return middle
+            if nums[middle] == target: 
+                return middle
 
             if nums[middle] > target:
                 return binary_search(left, middle - 1)
