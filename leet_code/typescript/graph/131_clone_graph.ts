@@ -1,33 +1,30 @@
-/**
- * Definition for Node.
- * class Node {
- *     val: number
- *     neighbors: Node[]
- *     constructor(val?: number, neighbors?: Node[]) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.neighbors = (neighbors===undefined ? [] : neighbors)
- *     }
- * }
- */
-
-type Node = {
+type IGraphNode = {
     val: number;
-    neighbors: Node[] | []
+    neighbors: IGraphNode[] | []
 }
 
-function cloneGraph(node: Node | null): Node | null {
+class GraphNode {
+    val: number
+    neighbors: IGraphNode[]
+    constructor(val?: number, neighbors?: IGraphNode[]) {
+        this.val = (val===undefined ? 0 : val)
+        this.neighbors = (neighbors===undefined ? [] : neighbors)
+    }
+}
+
+function cloneGraph(node: GraphNode | null): IGraphNode | null {
     if (!node) return null;
 
-	const map = new Map<Node, Node>().set(node, new Node(node.val))
-    const queue: Node[] = [node]
+	const map = new Map<GraphNode, GraphNode>().set(node, new GraphNode())
+    const queue: GraphNode[] = [node]
 
     while (queue.length) {
-        const curr: Node = queue.pop();
-        const newNeighbors: Node[] = curr.neighbors;
+        const curr: GraphNode = queue.pop();
+        const newNeighbors: GraphNode[] = curr.neighbors;
 
         for (let n of newNeighbors) {
             if (!map.has(n)) {
-                map.set(n, new Node(n.val));
+                map.set(n, new GraphNode(n.val));
                 queue.push(n);
             }
             map.get(curr).neighbors.push(map.get(n))
@@ -36,3 +33,8 @@ function cloneGraph(node: Node | null): Node | null {
 
     return map.get(node);
 };
+
+// Test cases
+const node1 = new GraphNode(1, [new GraphNode(2), new GraphNode(3)]);
+
+console.log(cloneGraph(node1));
