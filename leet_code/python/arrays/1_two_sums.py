@@ -15,4 +15,21 @@ class Solution:
                 return [dict[searched], i]
 
             dict[num] = i
+
+class Solution1(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+
+        unique = {}
+        unique[nums[0]] = 0;
+
+        for i in range(1, len(nums), 1):
+            to_find = target - nums[i]
+            if unique.has_key(to_find): 
+                return [unique[to_find], i]
+            unique[nums[i]] = i
         

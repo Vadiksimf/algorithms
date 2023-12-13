@@ -3,9 +3,13 @@
         "target": "es2017",
         "module": "commonjs",
         "sourceMap": true,
+        "rootDir": "./",
         "baseUrl": "./",
         "outDir": "./leet_code/javascript",
     },
+    "include": [
+        "leet_code/typescript" // Update this to match your source file structure
+      ],
     "exclude": [
         "node_modules"
     ]
